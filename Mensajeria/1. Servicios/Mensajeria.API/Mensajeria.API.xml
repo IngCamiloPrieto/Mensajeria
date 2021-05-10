@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Mensajeria.API</name>
+    </assembly>
+    <members>
+        <member name="T:Mensajeria.API.Models.Negocio.MensajeModel">
+            <summary>
+            Clase que define las propiedades de Mensaje
+            </summary>
+        </member>
+        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.IdSala">
+            <summary>
+            Obtiene o establece el Id de la Sala
+            </summary>
+        </member>
+        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.TipoMensaje">
+            <summary>
+            Obtiene o establece el TipoMensaje
+            </summary>
+        </member>
+        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.Mensaje">
+            <summary>
+            Obtiene o establece el Mensaje
+            </summary>
+        </member>
+    </members>
+</doc>
