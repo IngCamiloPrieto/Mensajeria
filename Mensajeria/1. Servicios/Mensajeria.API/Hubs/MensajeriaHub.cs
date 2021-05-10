@@ -17,7 +17,6 @@
             await Groups.AddToGroupAsync(Context.ConnectionId, idSala);
         }
 
-        //Prueba
         public async Task DesconectarseDeSala(string idSala)
         {
             await Groups.RemoveFromGroupAsync(Context.ConnectionId, idSala);

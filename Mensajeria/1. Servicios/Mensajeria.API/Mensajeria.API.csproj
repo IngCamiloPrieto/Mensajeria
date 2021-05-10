@@ -10,6 +10,10 @@
     <DocumentationFile>C:\Temporal\Mensajeria\Backend\Mensajeria\1. Servicios\Mensajeria.API\Mensajeria.API.xml</DocumentationFile>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Temporal\Mensajeria\Backend\Mensajeria\1. Servicios\Mensajeria.API\Mensajeria.API.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Models\Consulta\" />
     <Folder Include="Models\Repositorio\" />
