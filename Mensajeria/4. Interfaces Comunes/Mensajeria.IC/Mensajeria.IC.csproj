@@ -8,8 +8,12 @@
 
   <ItemGroup>
     <Folder Include="DTO\Consulta\" />
-    <Folder Include="DTO\Repositorio\" />
     <Folder Include="Enumeraciones\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Utilitarios.TransversalesNet" Version="1.1.8" />
+    <PackageReference Include="UtilitariosNet" Version="1.0.1" />
   </ItemGroup>
 
   <ItemGroup>

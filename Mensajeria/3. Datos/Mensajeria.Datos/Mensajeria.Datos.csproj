@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MongoDB.Driver" Version="2.12.3" />
+    <PackageReference Include="Utilitarios.TransversalesNet" Version="1.1.8" />
+    <PackageReference Include="UtilitariosNet" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\4. Interfaces Comunes\Mensajeria.IC\Mensajeria.IC.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Utilitarios.TransaccionalNet">
+      <HintPath>..\..\..\..\..\..\Arquitectura\Net\Utilitarios\Transaccionales\Utilitarios.TransaccionalNet\bin\Debug\net5.0\Utilitarios.TransaccionalNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -59,5 +59,23 @@ namespace Mensajeria.IC.Recursos {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro guardado correctamente..
+        /// </summary>
+        public static string MensajeCreacionEdicionExitosa {
+            get {
+                return ResourceManager.GetString("MensajeCreacionEdicionExitosa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registro eliminado correctamente..
+        /// </summary>
+        public static string MensajeEntidadEliminadaConExito {
+            get {
+                return ResourceManager.GetString("MensajeEntidadEliminadaConExito", resourceCulture);
+            }
+        }
     }
 }
