@@ -1,10 +1,10 @@
 // ------------------------------------------------------------------------------------
-// <copyright file="MensajeDO.cs" company="Camilo Prieto">
+// <copyright file="Mensaje.cs" company="Camilo Prieto">
 //     Copyright (c) Camilo Prieto. All rights reserved.
 // </copyright>
 // <author>Camilo Prieto</author>
 // ------------------------------------------------------------------------------------
-namespace Mensajeria.Datos.Contexto.Repositorio
+namespace Mensajeria.API.Models.Repositorio
 {
     using Mensajeria.IC.DTO.Repositorio;
     using System;
@@ -12,7 +12,7 @@ namespace Mensajeria.Datos.Contexto.Repositorio
     /// <summary>
     /// clase para las propiedades de la entidad Mensaje
     /// </summary>
-    public partial class MensajeDO : IMensajeDTO
+    public class Mensaje : IMensajeDTO
     {
         /// <summary>
         /// Obtiene o establece el Id Mensaje
@@ -32,7 +32,7 @@ namespace Mensajeria.Datos.Contexto.Repositorio
         /// <summary>
         /// Obtiene o establece el Mensaje
         /// </summary>
-        public string Mensaje { get; set; }
+        public string Texto { get; set; }
 
         /// <summary>
         /// Obtiene o establece el Fecha

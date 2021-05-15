@@ -1,22 +1,25 @@
 // ------------------------------------------------------------------------------------
-// <copyright file="MensajeBO.cs" company="Camilo Prieto">
+// <copyright file="MensajeDO.cs" company="Camilo Prieto">
 //     Copyright (c) Camilo Prieto. All rights reserved.
 // </copyright>
 // <author>Camilo Prieto</author>
 // ------------------------------------------------------------------------------------
-namespace Mensajeria.Negocio.Clases.BO.Repositorio
+namespace Mensajeria.Datos.Contexto.Repositorio
 {
     using Mensajeria.IC.DTO.Repositorio;
+    using MongoDB.Bson.Serialization.Attributes;
+    using MongoDB.Bson.Serialization.IdGenerators;
     using System;
 
     /// <summary>
     /// clase para las propiedades de la entidad Mensaje
     /// </summary>
-    public class MensajeBO : IMensajeDTO
+    public partial class Mensaje : IMensajeDTO
     {
         /// <summary>
         /// Obtiene o establece el Id Mensaje
         /// </summary>
+        [BsonId(IdGenerator = typeof(CombGuidGenerator))]
         public Guid IdMensaje { get; set; }
 
         /// <summary>

@@ -38,31 +38,17 @@ namespace Mensajeria.API.Controllers
         }
 
         /// <summary>
-        /// Metodo consultar lista sala
+        /// Metodo consultar salas por usuario
         /// </summary>
-        /// <returns>Respuesta tipo Sala</returns>
+        /// <param name="usuario">Identificador del usuario</param>
+        /// <returns>Respuesta tipo Usuario</returns>
         [HttpGet]
-        [Route("ConsultarListaSala")]
-        public async Task<Respuesta<Sala>> ConsultarListaSala()
+        [Route("ConsultarSalasPorUsuario")]
+        public async Task<Respuesta<Usuario>> ConsultarSalasPorUsuario(string usuario)
         {
-            return await this.EjecutarTransaccionAPI<Task<Respuesta<Sala>>, SalaController>(async () =>
+            return await this.EjecutarTransaccionAPI<Task<Respuesta<Usuario>>, SalaController>(async () =>
             {
-                return Mapeador.MapearObjetoPorJson<Respuesta<Sala>>(await negocioSala.Value.ConsultarListaSalaAsync());
-            });
-        }
-
-        /// <summary>
-        /// Metodo consultar por llave sala
-        /// </summary>
-        /// <param name="sala">Entidad a consultar</param>
-        /// <returns>Respuesta tipo Sala</returns>
-        [HttpPost]
-        [Route("ConsultarSalaLlave")]
-        public async Task<Respuesta<Sala>> ConsultarSalaLlave(Sala sala)
-        {
-            return await this.EjecutarTransaccionAPI<Task<Respuesta<Sala>>, SalaController>(async () =>
-            {
-                return Mapeador.MapearObjetoPorJson<Respuesta<Sala>>(await negocioSala.Value.ConsultarSalaLlaveAsync(sala));
+                return Mapeador.MapearObjetoPorJson<Respuesta<Usuario>>(await negocioSala.Value.ConsultarSalasPorUsuarioAsync(usuario));
             });
         }
 
@@ -82,32 +68,18 @@ namespace Mensajeria.API.Controllers
         }
 
         /// <summary>
-        /// Metodo editar sala
+        /// Metodo Unirse a Sala
         /// </summary>
-        /// <param name="sala">Entidad a editar</param>
-        /// <returns>Respuesta tipo Sala</returns>
-        [HttpPut]
-        [Route("EditarSala")]
-        public async Task<Respuesta<Sala>> EditarSala(Sala sala)
+        /// <param name="sala">Identificador de la sala</param>
+        /// <param name="usuario">Identificador del usuario</param>
+        /// <returns>Respuesta tipo Usuario</returns>
+        [HttpPost]
+        [Route("UnirseASala")]
+        public async Task<Respuesta<Usuario>> UnirseASala(string sala, string usuario)
         {
-            return await this.EjecutarTransaccionAPI<Task<Respuesta<Sala>>, SalaController>(async () =>
+            return await this.EjecutarTransaccionAPI<Task<Respuesta<Usuario>>, SalaController>(async () =>
             {
-                return Mapeador.MapearObjetoPorJson<Respuesta<Sala>>(await negocioSala.Value.EditarSalaAsync(sala));
-            });
-        }
-
-        /// <summary>
-        /// Metodo eliminar sala
-        /// </summary>
-        /// <param name="sala">Entidad a eliminar</param>
-        /// <returns>Respuesta tipo Sala</returns>
-        [HttpDelete]
-        [Route("EliminarSala")]
-        public async Task<Respuesta<Sala>> EliminarSala(Sala sala)
-        {
-            return await this.EjecutarTransaccionAPI<Task<Respuesta<Sala>>, SalaController>(async () =>
-            {
-                return Mapeador.MapearObjetoPorJson<Respuesta<Sala>>(await negocioSala.Value.EliminarSalaAsync(sala));
+                return Mapeador.MapearObjetoPorJson<Respuesta<Usuario>>(await negocioSala.Value.UnirseASalaAsync(sala, usuario));
             });
         }
     }

@@ -31,7 +31,7 @@ namespace Mensajeria.IC.DTO.Repositorio
         /// <summary>
         /// Obtiene o establece el Mensaje
         /// </summary>
-        string Mensaje { get; set; }
+        string Texto { get; set; }
 
         /// <summary>
         /// Obtiene o establece el Fecha

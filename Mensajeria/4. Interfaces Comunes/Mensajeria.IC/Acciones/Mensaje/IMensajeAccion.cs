@@ -24,19 +24,6 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="mensaje">Entidad a guardar</param>
         /// <returns>Respuesta tipo Mensaje</returns>
         Task<Respuesta<IMensajeDTO>> GuardarMensajeAsync(IMensajeDTO mensaje);
-
-        /// <summary>
-        /// Metodo consultar lista mensaje
-        /// </summary>
-        /// <returns>Respuesta tipo Mensaje</returns>
-        Task<Respuesta<IMensajeDTO>> ConsultarListaMensajeAsync();
-
-        /// <summary>
-        /// Metodo consultar por llave mensaje
-        /// </summary>
-        /// <param name="mensaje">Entidad a consultar</param>
-        /// <returns>Respuesta tipo Mensaje</returns>
-        Task<Respuesta<IMensajeDTO>> ConsultarMensajeLlaveAsync(IMensajeDTO mensaje);
     }
 
     /// <summary>
@@ -50,6 +37,19 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="filtro">Filtro de las entidades</param>
         /// <returns>Respuesta tipo Mensaje</returns>
         Task<Respuesta<IMensajeDTO>> ConsultarListaMensajePorFiltroAsync(Expression<Func<IMensajeDTO, bool>> filtro);
+
+        /// <summary>
+        /// Metodo consultar por llave mensaje
+        /// </summary>
+        /// <param name="mensaje">Entidad a consultar</param>
+        /// <returns>Respuesta tipo Mensaje</returns>
+        Task<Respuesta<IMensajeDTO>> ConsultarMensajeLlaveAsync(IMensajeDTO mensaje);
+
+        /// <summary>
+        /// Metodo consultar lista mensaje
+        /// </summary>
+        /// <returns>Respuesta tipo Mensaje</returns>
+        Task<Respuesta<IMensajeDTO>> ConsultarListaMensajeAsync();
     }
 
     /// <summary>

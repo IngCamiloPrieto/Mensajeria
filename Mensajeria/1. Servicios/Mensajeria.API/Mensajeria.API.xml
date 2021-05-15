@@ -4,6 +4,39 @@
         <name>Mensajeria.API</name>
     </assembly>
     <members>
+        <member name="T:Mensajeria.API.Controllers.MensajeController">
+            <summary>
+            Clase con las capaciades Rest de la entidad Mensaje
+            </summary>
+        </member>
+        <member name="F:Mensajeria.API.Controllers.MensajeController.negocioMensaje">
+            <summary>
+            Objeto para negocio Mensaje
+            </summary>
+        </member>
+        <member name="P:Mensajeria.API.Controllers.MensajeController.mensajeria">
+            <summary>
+            Hub de notificación de mensajes
+            </summary>
+        </member>
+        <member name="M:Mensajeria.API.Controllers.MensajeController.#ctor(Microsoft.AspNetCore.SignalR.IHubContext{Mensajeria.API.Hubs.MensajeriaHub,Mensajeria.IC.Acciones.IMensajeriaAccionCliente},TransaccionalNet.Mongo.Interfaces.IDatabaseSettings)">
+            <summary>
+            Inicializa una nueva instancia de la clase MensajeController
+            </summary>
+        </member>
+        <member name="M:Mensajeria.API.Controllers.MensajeController.GuardarMensaje(Mensajeria.API.Models.Repositorio.Mensaje)">
+            <summary>
+            Metodo guardar mensaje
+            </summary>
+            <param name="mensaje">Entidad a guardar</param>
+            <returns>Respuesta tipo Mensaje</returns>
+        </member>
+        <member name="M:Mensajeria.API.Controllers.MensajeController.Index">
+            <summary>
+            Metodo de validación del servicio
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:Mensajeria.API.Controllers.SalaController">
             <summary>
             Clase con las capaciades Rest de la entidad Sala
@@ -19,18 +52,12 @@
             Inicializa una nueva instancia de la clase SalaController
             </summary>
         </member>
-        <member name="M:Mensajeria.API.Controllers.SalaController.ConsultarListaSala">
+        <member name="M:Mensajeria.API.Controllers.SalaController.ConsultarSalasPorUsuario(System.String)">
             <summary>
-            Metodo consultar lista sala
+            Metodo consultar salas por usuario
             </summary>
-            <returns>Respuesta tipo Sala</returns>
-        </member>
-        <member name="M:Mensajeria.API.Controllers.SalaController.ConsultarSalaLlave(Mensajeria.API.Models.Repositorio.Sala)">
-            <summary>
-            Metodo consultar por llave sala
-            </summary>
-            <param name="sala">Entidad a consultar</param>
-            <returns>Respuesta tipo Sala</returns>
+            <param name="usuario">Identificador del usuario</param>
+            <returns>Respuesta tipo Usuario</returns>
         </member>
         <member name="M:Mensajeria.API.Controllers.SalaController.GuardarSala(Mensajeria.API.Models.Repositorio.Sala)">
             <summary>
@@ -39,71 +66,67 @@
             <param name="sala">Entidad a guardar</param>
             <returns>Respuesta tipo Sala</returns>
         </member>
-        <member name="M:Mensajeria.API.Controllers.SalaController.EditarSala(Mensajeria.API.Models.Repositorio.Sala)">
+        <member name="M:Mensajeria.API.Controllers.SalaController.UnirseASala(System.String,System.String)">
             <summary>
-            Metodo editar sala
+            Metodo Unirse a Sala
             </summary>
-            <param name="sala">Entidad a editar</param>
-            <returns>Respuesta tipo Sala</returns>
+            <param name="sala">Identificador de la sala</param>
+            <param name="usuario">Identificador del usuario</param>
+            <returns>Respuesta tipo Usuario</returns>
         </member>
-        <member name="M:Mensajeria.API.Controllers.SalaController.EliminarSala(Mensajeria.API.Models.Repositorio.Sala)">
+        <member name="T:Mensajeria.API.Controllers.UsuarioController">
             <summary>
-            Metodo eliminar sala
-            </summary>
-            <param name="sala">Entidad a eliminar</param>
-            <returns>Respuesta tipo Sala</returns>
-        </member>
-        <member name="T:Mensajeria.API.Models.Negocio.MensajeModel">
-            <summary>
-            Clase que define las propiedades de Mensaje
+            Clase con las capaciades Rest de la entidad Usuario
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.IdSala">
+        <member name="F:Mensajeria.API.Controllers.UsuarioController.negocioUsuario">
             <summary>
-            Obtiene o establece el Id de la Sala
+            Objeto para negocio Usuario
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.TipoMensaje">
+        <member name="M:Mensajeria.API.Controllers.UsuarioController.#ctor(TransaccionalNet.Mongo.Interfaces.IDatabaseSettings)">
             <summary>
-            Obtiene o establece el TipoMensaje
+            Inicializa una nueva instancia de la clase UsuarioController
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Negocio.MensajeModel.Mensaje">
+        <member name="M:Mensajeria.API.Controllers.UsuarioController.GuardarUsuario(Mensajeria.API.Models.Repositorio.Usuario)">
             <summary>
-            Obtiene o establece el Mensaje
+            Metodo guardar usuario
             </summary>
+            <param name="usuario">Entidad a guardar</param>
+            <returns>Respuesta tipo Usuario</returns>
         </member>
-        <member name="T:Mensajeria.API.Models.Repositorio.MensajeMode">
+        <member name="T:Mensajeria.API.Models.Repositorio.Mensaje">
             <summary>
             clase para las propiedades de la entidad Mensaje
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.IdMensaje">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.IdMensaje">
             <summary>
             Obtiene o establece el Id Mensaje
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.IdSala">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.IdSala">
             <summary>
             Obtiene o establece el Id Sala
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.TipoMensaje">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.TipoMensaje">
             <summary>
             Obtiene o establece el Tipo Mensaje
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.Mensaje">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.Texto">
             <summary>
             Obtiene o establece el Mensaje
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.Fecha">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.Fecha">
             <summary>
             Obtiene o establece el Fecha
             </summary>
         </member>
-        <member name="P:Mensajeria.API.Models.Repositorio.MensajeMode.Creador">
+        <member name="P:Mensajeria.API.Models.Repositorio.Mensaje.Creador">
             <summary>
             Obtiene o establece el Creador
             </summary>

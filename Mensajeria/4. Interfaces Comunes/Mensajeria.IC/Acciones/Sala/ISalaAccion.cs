@@ -24,7 +24,13 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="sala">Entidad a guardar</param>
         /// <returns>Respuesta tipo Sala</returns>
         Task<Respuesta<ISalaDTO>> GuardarSalaAsync(ISalaDTO sala);
+    }
 
+    /// <summary>
+    /// Interface que define las acciones de la capa de repositorioISalaAccion
+    /// </summary>
+    public interface ISalaRepositorioAccion : ISalaAccion
+    {
         /// <summary>
         /// Metodo editar sala
         /// </summary>
@@ -51,13 +57,7 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="sala">Entidad a eliminar</param>
         /// <returns>Respuesta tipo Sala</returns>
         Task<Respuesta<ISalaDTO>> EliminarSalaAsync(ISalaDTO sala);
-    }
 
-    /// <summary>
-    /// Interface que define las acciones de la capa de repositorioISalaAccion
-    /// </summary>
-    public interface ISalaRepositorioAccion : ISalaAccion
-    {
         /// <summary>
         /// Metodo editar sala por query
         /// </summary>
@@ -102,5 +102,19 @@ namespace Mensajeria.IC.Acciones.Repositorio
     /// </summary>
     public interface ISalaNegocioAccion : ISalaAccion
     {
+        /// <summary>
+        /// Metodo consultar salas por usuario
+        /// </summary>
+        /// <param name="usuario">usuario a filtrar</param>
+        /// <returns>Respuesta tipo Usuario</returns>
+        Task<Respuesta<ISalaDTO>> ConsultarSalasPorUsuarioAsync(string usuario);
+
+        /// <summary>
+        /// Metodo Unirse a Sala
+        /// </summary>
+        /// <param name="sala">Identificador de la sala</param>
+        /// <param name="usuario">Identificador del usuario</param>
+        /// <returns>Respuesta tipo Usuario</returns>
+        Task<Respuesta<IUsuarioDTO>> UnirseASalaAsync(string sala, string usuario);
     }
 }

@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <Folder Include="Models\Consulta\" />
+    <Folder Include="Models\Negocio\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -30,6 +31,7 @@
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="6.1.4" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.1.4" />
     <PackageReference Include="Utilitarios.APINet" Version="1.0.3" />
+    <PackageReference Include="Utilitarios.TransaccionalNet" Version="1.0.1" />
     <PackageReference Include="Utilitarios.TransversalesNet" Version="1.1.8" />
     <PackageReference Include="UtilitariosNet" Version="1.0.1" />
   </ItemGroup>
@@ -37,11 +39,5 @@
   <ItemGroup>
     <ProjectReference Include="..\..\2. Negocio\Mensajeria.Negocio\Mensajeria.Negocio.csproj" />
     <ProjectReference Include="..\..\4. Interfaces Comunes\Mensajeria.IC\Mensajeria.IC.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Utilitarios.TransaccionalNet">
-      <HintPath>..\..\..\..\..\..\Arquitectura\Net\Utilitarios\Transaccionales\Utilitarios.TransaccionalNet\bin\Debug\net5.0\Utilitarios.TransaccionalNet.dll</HintPath>
-    </Reference>
   </ItemGroup>
 </Project>

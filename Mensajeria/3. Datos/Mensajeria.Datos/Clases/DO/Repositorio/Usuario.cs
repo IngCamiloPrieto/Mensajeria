@@ -7,17 +7,20 @@
 namespace Mensajeria.Datos.Contexto.Repositorio
 {
     using Mensajeria.IC.DTO.Repositorio;
+    using MongoDB.Bson.Serialization.Attributes;
+    using MongoDB.Bson.Serialization.IdGenerators;
     using System;
     using System.Collections.Generic;
 
     /// <summary>
     /// clase para las propiedades de la entidad Usuario
     /// </summary>
-    public partial class UsuarioDO : IUsuarioDTO
+    public partial class Usuario : IUsuarioDTO
     {
         /// <summary>
         /// Obtiene o establece el Id Usuario
         /// </summary>
+        [BsonId(IdGenerator = typeof(CombGuidGenerator))]
         public Guid IdUsuario { get; set; }
 
         /// <summary>

@@ -24,7 +24,13 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="usuario">Entidad a guardar</param>
         /// <returns>Respuesta tipo Usuario</returns>
         Task<Respuesta<IUsuarioDTO>> GuardarUsuarioAsync(IUsuarioDTO usuario);
+    }
 
+    /// <summary>
+    /// Interface que define las acciones de la capa de repositorioIUsuarioAccion
+    /// </summary>
+    public interface IUsuarioRepositorioAccion : IUsuarioAccion
+    {
         /// <summary>
         /// Metodo editar usuario
         /// </summary>
@@ -44,13 +50,7 @@ namespace Mensajeria.IC.Acciones.Repositorio
         /// <param name="usuario">Entidad a consultar</param>
         /// <returns>Respuesta tipo Usuario</returns>
         Task<Respuesta<IUsuarioDTO>> ConsultarUsuarioLlaveAsync(IUsuarioDTO usuario);
-    }
 
-    /// <summary>
-    /// Interface que define las acciones de la capa de repositorioIUsuarioAccion
-    /// </summary>
-    public interface IUsuarioRepositorioAccion : IUsuarioAccion
-    {
         /// <summary>
         /// Metodo editar usuario por query
         /// </summary>
